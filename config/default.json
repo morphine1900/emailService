@@ -1,0 +1,11 @@
+{
+    "SendGrid": {
+        "uri": "https://api.sendgrid.com/v3/mail/send",
+        "key": "aabbcc"
+    },
+    "SES": {
+        "accessKeyId": "aabbcc",
+        "secretAccessKey": "aabbcc",
+        "region": "ap-southeast-2"
+    }
+}
