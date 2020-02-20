@@ -17,4 +17,4 @@ README.html
 .DS_Store
 node_modules
 
-config/production.json
+config/test.json

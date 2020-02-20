@@ -7,8 +7,11 @@ router.get('/', function (req, res) {
 });
 router.post('/send_email', async (req, res) => {
     const emailDTO = req.body;
-    const result = await service.send(emailDTO);
-    res.end(result);
+    if (await service.send(emailDTO)) {
+        res.end();
+    } else {
+        res.status(400).end();
+    }
 });
 
 module.exports = router;

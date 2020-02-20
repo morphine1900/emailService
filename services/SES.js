@@ -21,7 +21,7 @@ class SES {
                 Body: {
                     Text: {
                         Charset: 'UTF-8',
-                        Data: "from ses"//emailDTO.content
+                        Data: emailDTO.content
                     },
                 },
                 Subject: {

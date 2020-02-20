@@ -32,7 +32,7 @@ class SendGrid {
                 "content": [
                     {
                         "type": "text/plain",
-                        "value": "from sendGrid"//emailDTO.content
+                        "value": emailDTO.content
                     }
                 ]
             }

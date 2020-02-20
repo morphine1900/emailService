@@ -23,7 +23,8 @@ The email service is powered by the following email providers:
 ### Future improvements:
  * Migrate to Typescript for a stricter abstraction
  * AWS IAM roles are better practice for authorization
- 
+ * Error handling
+  
 ### Existing code show:
 A simple GraphQL tag parser:
  * ext/graphTagParser.ts

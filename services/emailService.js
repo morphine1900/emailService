@@ -10,13 +10,17 @@ class EmailService {
     }
 
     async send(emailDTO, curPvdIdx = 0) {
+        if (curPvdIdx >= this.providers.length) {
+            return false;
+        }
         const provider = this.providers[curPvdIdx];
         console.log('try to send email via ' + provider.name);
         try {
-            console.log(await provider.send(emailDTO));
-            return "OK";
+            const result = await provider.send(emailDTO);
+            console.log(result);
+            return true;
         } catch (e) {
-            return this.send(emailDTO, ++curPvdIdx % this.providers.length);
+            return this.send(emailDTO, ++curPvdIdx);
         }
     }
 }
