@@ -38,7 +38,7 @@ class SES {
                 if (err) {
                     return reject(err);
                 }
-                return resolve(data);
+                return resolve('success');
             });
         })
     }

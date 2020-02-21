@@ -18,7 +18,6 @@
     "pug": "^2.0.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "request": "^2.88.2",
     "webpack": "^4.41.6"
   },
   "description": "A service with multi email service provider abstractions",

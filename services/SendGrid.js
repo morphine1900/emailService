@@ -1,4 +1,4 @@
-const request = require('request');
+const axios = require('axios');
 const config = require('config');
 
 class SendGrid {
@@ -9,13 +9,13 @@ class SendGrid {
     }
     send(emailDTO) {
         const options = {
-            uri: this.uri,
+            url: this.uri,
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + this.key,
                 'Content-Type': 'application/json'
             },
-            json: {
+            data: {
                 "personalizations": [
                     {
                         "to": [
@@ -38,14 +38,14 @@ class SendGrid {
             }
         };
         return new Promise((resolve, reject) => {
-            request(options, (err, resp) => {
+            axios(options, (err, resp) => {
                 if (err) {
                     return reject(err);
                 }
                 if (resp.statusCode !== 200 && resp.statusCode !== 202) {
-                    return reject(resp.statusCode);
+                    return reject(new Error(resp.statusCode));
                 }
-                return resolve(resp.statusCode);
+                return resolve('success');
             })
         });
     }
