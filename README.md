@@ -10,15 +10,18 @@ provider without affecting your customers
 The email service is powered by the following email providers:
  * SendGrid
  * AWS SES
+And a very simple react front end
 
 ### Run locally:
  * Install: npm install
  * Build & run: npm start
  * Test: npm run test
- 
+ * Front end: npm run startFE
+
 ### Known Issues:
  * AWS SES need both source and target email address validated
  * My sendgrid and ses keys not included in the project, for safety reason
+ * The second test case in emailService.spec.js can be run separately
 
 ### Future improvements:
  * Migrate to Typescript for a stricter abstraction

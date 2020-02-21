@@ -10,14 +10,12 @@ module.exports = {
         filename: './public/built/bundle.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: path.join(__dirname, '.'),
-                exclude: /(node_modules)/,
-                loader: 'babel',
-                query: {
-                    cacheDirectory: true,
-                    presets: ['es2015', 'react']
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
                 }
             }
         ]

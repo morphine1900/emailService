@@ -37,18 +37,9 @@ class SendGrid {
                 ]
             }
         };
-        return new Promise((resolve, reject) => {
-            axios(options, (err, resp) => {
-                if (err) {
-                    return reject(err);
-                }
-                if (resp.statusCode !== 200 && resp.statusCode !== 202) {
-                    return reject(new Error(resp.statusCode));
-                }
-                return resolve('success');
-            })
-        });
-    }
+        return axios(options)
+            .then(resp => 'success');
+    };
 }
 
 module.exports = SendGrid;
